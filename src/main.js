@@ -41,7 +41,6 @@ let fileHandles = {};
 async function open(file) {
   let id = Math.random().toString(36).replace('0.','');
   while (id in fileHandles) id = Math.random().toString(36).replace('0.','');
-  if (file.type != "application/pdf") return;
   if (file instanceof DataTransferItem) {
     if (file.kind != "file") return;
     file.getAsFileSystemHandle?.().then(handle => fileHandles[id] = handle);
@@ -51,7 +50,7 @@ async function open(file) {
     fileHandles[id] = file;
     file = await file.getFile();
   }
-  if (!(file instanceof File)) return;
+  if (!(file instanceof File) || file.type != "application/pdf") return;
   docManager.openDocumentBuffer({
     buffer: await file.arrayBuffer(),
     name: file.name,
