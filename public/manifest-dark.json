@@ -1,0 +1,53 @@
+{
+  "name": "EmbedPDF",
+  "short_name": "EmbedPDF",
+  "description":"EmbedPDF is a blazing-fast, MIT-licensed JavaScript PDF viewer that works with React, Vue, Svelte, and plain JS. Fully customizable, zero vendor lock-in, and perfect for modern web apps.",
+  "icons": [
+    {
+      "src": "web-app-manifest-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "web-app-manifest-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "favicon.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon",
+      "purpose": "any"
+    },
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "web-app-manifest.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ],
+  "start_url": ".",
+  "theme_color": "#374151",
+  "background_color": "#111827",
+  "display": "standalone",
+  "display_override": ["window-controls-overlay"],
+  "launch_handler": {
+    "client_mode": "focus-existing"
+  },
+  "file_handlers": [
+    {
+      "action": ".",
+      "accept": {
+        "application/pdf": [".pdf"]
+      }
+    }
+  ]
+}

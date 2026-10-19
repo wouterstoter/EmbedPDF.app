@@ -1,0 +1,21 @@
+{
+  "name": "embedpdf",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "prebuild": "shx cp node_modules/@embedpdf/pdfium/dist/pdfium.wasm public/pdfium.wasm && shx cp -r node_modules/@embedpdf/default-stamps public",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "shx": "^0.4.0",
+    "vite": "^8.3.0"
+  },
+  "dependencies": {
+    "@embedpdf/default-stamps": "^0.0.1",
+    "@embedpdf/pdfium": "^2.15.1",
+    "@embedpdf/snippet": "^2.15.1"
+  }
+}
